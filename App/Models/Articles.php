@@ -10,7 +10,7 @@ class Articles extends Core\Model
     public function addArticle(string $title,string $content,string $img)
     {
         $date = date('Y-m-d');
-        $values = '"'.$title.'",'.'"'.$content.'",'.'"'.$img.'",'.'"'.$date.'"';
+        $values = '"'. addslashes($title) .'","'.addslashes($content).'","'.addslashes($img).'","'.addslashes($date).'"';
         return $this->insert_into(self::TABLE,'article_title,article_content,article_img,article_date',$values);
         
     }
