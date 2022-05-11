@@ -28,7 +28,7 @@ class Articles extends Core\Model
 
     public function allArticles()
     {
-        return $this->select('*',self::TABLE);
+        return $this->select('*',self::TABLE,'order by article_id desc');
     }
 
     public function getArticleById(string $id)

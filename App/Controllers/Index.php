@@ -7,7 +7,7 @@ use Core\Session;
 
 class Index extends Core\Controller
 {
-    public function home ($parms)
+    public function home($parms)
     {
         $data['title']    = 'home page.';
         $data['pagename'] = 'Home';
