@@ -107,7 +107,7 @@ class Admin extends Core\Controller
         $data['action'] = '/add';
         $data['user'] = Session::get('user');
         $data['defualt_img'] = 'img/logo.jpg';
-        return $this->view('make-article',$data);
+        return $this->view('articleoperations',$data);
     }
 
     public function edit ($prams)
@@ -133,7 +133,7 @@ class Admin extends Core\Controller
         $data['user'] = Session::get('user');
         $data['old'] = $table->getArticleById(Request::get('id'));
         $data['defualt_img'] = 'img/logo.jpg';
-        return $this->view('make-article',$data);
+        return $this->view('articleoperations',$data);
     }
 
     public function delete($prams)
