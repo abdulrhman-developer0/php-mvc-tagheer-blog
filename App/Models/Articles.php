@@ -31,6 +31,12 @@ class Articles extends Core\Model
         return $this->select('*',self::TABLE,'order by article_id desc');
     }
 
+    public function getArticlesByRules(int $limit = 0 ,string $order = 'DESC')
+    {
+        $sql = 'SELECT * FROM '.self::TABLE.' ORDER BY article_id '.$order.' LIMIT '.$limit;
+        return $this->query($sql)->fetchAll();
+    }
+
     public function getArticleById(string $id)
     {
         return $this->select('*',self::TABLE,'WHERE article_id='.$id)->fetch();

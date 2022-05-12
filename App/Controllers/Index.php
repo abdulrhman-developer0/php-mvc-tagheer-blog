@@ -9,10 +9,14 @@ class Index extends Core\Controller
 {
     public function home($parms)
     {
+        $table = $this->model('Articles');
+
         $data['title']    = 'home page.';
         $data['pagename'] = 'Home';
         $data['action'] = '/home';
         $data['user'] = Session::get('user');
+        $data['articles'] = $table->getArticlesByRules(3);
+        $data['defualt_img'] = 'img/logo.jpg';
         return $this->view('home',$data);
     }
 
