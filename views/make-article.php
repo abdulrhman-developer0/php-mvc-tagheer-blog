@@ -9,7 +9,7 @@
 
                 
                 <div class="col-md-5 mb-3" onclick="choseImage()">
-                    <img class="img-fluid mb-4 mb-md-0" src="<?php  echo (isset($old))?  'uploads/images/'.$old['article_img'] : 'img/logo.jpg' ?>" id="imageShow" alt="Image" />
+                    <img class="img-fluid mb-4 mb-md-0" src="<?php  echo  (isset($old) && $old['article_img'])?  'uploads/images/'.$old['article_img'] : $defualt_img ?>" id="imageShow" alt="Image" />
                 </div>
 
                 <form method="POST" enctype="multipart/form-data" action="<?php echo $action ?>">

@@ -1,8 +1,12 @@
-<?php foreach ( $articles as $article ): ?>
+<?php
+
+use App\Models\Articles;
+
+ foreach ( $articles as $article ): ?>
 
         <div class="row blog-item px-3 pb-5">
                 <div class="col-md-5">
-                    <img class="img-fluid mb-4 mb-md-0" src="<?php echo 'uploads/images/'.$article['article_img'] ?? 'img/blog-1.jpg' ?>" alt="Image">
+                    <img class="img-fluid mb-4 mb-md-0" src="<?php echo ($article['article_img'])? 'uploads/images/'.$article['article_img'] : $defualt_img ?>" alt="Image">
                 </div>
                 <div class="col-md-7">
                     <h3 class="mt-md-4 px-md-3 mb-2 py-2 bg-white font-weight-bold"> <?php echo $article['article_title'] ?></h3>

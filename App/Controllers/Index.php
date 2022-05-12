@@ -35,6 +35,7 @@ class Index extends Core\Controller
         $data['admin'] = true;
         $data['user'] = Session::get('user');
         $data['articles'] = $table->allArticles();
+        $data['defualt_img'] = 'img/logo.jpg';
         return $this->view('blog',$data);
     }
 

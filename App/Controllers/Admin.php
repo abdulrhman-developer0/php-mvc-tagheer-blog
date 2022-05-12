@@ -102,6 +102,7 @@ class Admin extends Core\Controller
         $data['pagename'] = 'Add Article';
         $data['action'] = '/add';
         $data['user'] = Session::get('user');
+        $data['defualt_img'] = 'img/logo.jpg';
         return $this->view('make-article',$data);
     }
 
@@ -127,13 +128,14 @@ class Admin extends Core\Controller
         $data['action']  = '/edit';
         $data['user'] = Session::get('user');
         $data['old'] = $table->getArticleById(Request::get('id'));
+        $data['defualt_img'] = 'img/logo.jpg';
         return $this->view('make-article',$data);
     }
 
     public function delete($prams)
     {
         $this->chick_user();
-        $this->model('Articles')->removeArticle(Request::get('id'));
+        $this->model('articles')->removeArticle(Request::get('id'));
         redirect('/blog');
     }    
 }
