@@ -26,6 +26,7 @@
                     <p><?php echo $contact->email ?></p>
                 </div>
             </div>
+
             <div class="col-md-12 pb-5">
                 <div class="contact-form">
                     <div id="success"></div>

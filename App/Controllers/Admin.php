@@ -66,10 +66,14 @@ class Admin extends Core\Controller
     public function settings($prams)
     {
         $this->chick_user();
+
         if ( Request::method() == 'POST' ):
             
-            $settings['contact'] = Request::post('contact');
-            file_put_contents(CONFIG.'settings.json',json_encode($settings));
+                $settings['contact'] = Request::post('contact');
+                $settings['about'] = Request::post('about');
+                file_put_contents(CONFIG.'settings.json',json_encode($settings));
+
+
             $this->redirect('/settings');
         endif;
 

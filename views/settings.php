@@ -10,7 +10,7 @@
 
                 <form method="POST" enctype="multipart/form-data" action="<?php echo $action ?>">
 
-                    <h4 class="mt-2">Contact info</h4>
+                    <h4 class="mt-2">Contact us</h4>
                     <div class="control-group">
                         <label for="E">Address</label>
                         <input type="text" class="form-control" required name="contact[address]"  value="<?php echo $settings->contact->address ?>" />
@@ -23,6 +23,17 @@
                         <label for="E">Email</label>
                         <input type="text" class="form-control" required name="contact[email]"  value="<?php echo $settings->contact->email ?>" />
                     </div>
+                    <div class="control-group">
+                        <label for="E">Facebook</label>
+                        <input type="text" class="form-control" required name="contact[facebook]"  value="<?php echo $settings->contact->email ?>" />
+                    </div>
+
+                    <h4 class="mt-2">About us</h4>
+                    <div class="control-group">
+                        <label for="E">text for about us</label>
+                        <textarea class="form-control" required name="about[text]"><?php echo $settings->about->text ?></textarea>
+                    </div>
+
 
 
                     <div class="mt-3">

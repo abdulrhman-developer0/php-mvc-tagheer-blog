@@ -26,6 +26,7 @@ class Index extends Core\Controller
         $data['pagename'] = 'About';
         $data['action'] = '/about';
         $data['user'] = Session::get('user');
+        $data['text'] = json_decode(file_get_contents('../Config/settings.json'))->about->text;
         return $this->view('about',$data);
     }
 
