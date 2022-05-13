@@ -9,7 +9,7 @@
                 <img class="w-100" src="img/carousel-1.jpg" alt="Image">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <h2 class="mb-3 text-white font-weight-bold">Tagheer Team</h2>
-                    <a href="" class="btn btn-lg btn-outline-light mt-4">Read More</a>
+                    <a href="/about" class="btn btn-lg btn-outline-light mt-4">Read More</a>
                 </div>
             </div>
         </div>
