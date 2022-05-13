@@ -22,7 +22,7 @@ use App\Models\Articles;
                     <a class="btn btn-primary px-3" href="/coments?id=<?php echo $article['article_id'] ?>">GoTo Coments.</a>
                     <?php if ($user && $user['user_type'] > 0): ?>
                         <a class="btn btn-info   px-3" href="/edit?id=<?php echo $article['article_id'] ?>">Edit</a>
-                        <a class="btn btn-danger px-3 py-0" href="/delete?id=<?php echo $article['article_id'] ?>">Delete</a>
+                        <a class="btn btn-danger px-3" href="/delete?id=<?php echo $article['article_id'] ?>">Delete</a>
                     <?php endif ?>
                 </div>
         </div>
