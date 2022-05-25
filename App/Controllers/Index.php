@@ -53,5 +53,14 @@ class Index extends Core\Controller
         return view('contact',$data);
     }
 
+    public function coments($parms)
+    {
+        $data['title']    = 'coments';
+        $data['pagename'] = 'Coments';
+        $data['logo']     = 'img/logo.jpg';
+        $data['user'] = Session::get('user');
+        return $this->view('coments',$data);
+    }
+
     
 }

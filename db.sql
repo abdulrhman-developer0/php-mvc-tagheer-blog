@@ -18,3 +18,10 @@ CREATE TABLE `users`
 
 INSERT INTO `users` ( `user_name`,`user_email`,`user_password`,`user_type` )
 VALUES ('admin1','admin@tagheer.com','12345600',1);
+
+CREATE TABLE `coments`
+(
+    `for` INT(11),
+    `coment` TEXT NOT NULL,
+    FOREIGN KEY(`for`) REFERENCES articles(`article_id`)
+);
