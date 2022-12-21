@@ -66,10 +66,14 @@ class Admin extends Core\Controller
     public function settings($prams)
     {
         $this->chick_user();
+
         if ( Request::method() == 'POST' ):
             
-            $settings['contact'] = Request::post('contact');
-            file_put_contents(CONFIG.'settings.json',json_encode($settings));
+                $settings['contact'] = Request::post('contact');
+                $settings['about'] = Request::post('about');
+                file_put_contents(CONFIG.'settings.json',json_encode($settings));
+
+
             $this->redirect('/settings');
         endif;
 
@@ -102,7 +106,8 @@ class Admin extends Core\Controller
         $data['pagename'] = 'Add Article';
         $data['action'] = '/add';
         $data['user'] = Session::get('user');
-        return $this->view('make-article',$data);
+        $data['defualt_img'] = 'img/logo.jpg';
+        return $this->view('articleoperations',$data);
     }
 
     public function edit ($prams)
@@ -127,13 +132,14 @@ class Admin extends Core\Controller
         $data['action']  = '/edit';
         $data['user'] = Session::get('user');
         $data['old'] = $table->getArticleById(Request::get('id'));
-        return $this->view('make-article',$data);
+        $data['defualt_img'] = 'img/logo.jpg';
+        return $this->view('articleoperations',$data);
     }
 
     public function delete($prams)
     {
         $this->chick_user();
-        $this->model('Articles')->removeArticle(Request::get('id'));
+        $this->model('articles')->removeArticle(Request::get('id'));
         redirect('/blog');
     }    
 }

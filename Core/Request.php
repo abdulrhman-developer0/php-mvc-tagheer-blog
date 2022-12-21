@@ -17,18 +17,26 @@ class Request
         return $resualt;
     }
 
-
-    public static function method()
+    private function fillter(array $array,string $key,int $filter = FILTER_DEFAULT)
     {
-        return $_SERVER['REQUEST_METHOD'];
+        $value = (isset($array[$key]))? $array[$key] : '';
+        return filter_var($value,$filter);
+    }
+
+
+    public static function method(string $value = null)
+    {
+        $method = $_SERVER['REQUEST_METHOD'];
+        if ($value) return $method == $value;
+        return $method;
     }
 
     public static function uri()
     {
-        return $_SERVER['REQUEST_URI'];
+        return explode('?',$_SERVER['REQUEST_URI'])[0];
     }
 
-    public static function get( $key = null)
+    public static function get( $key = null,int $filter = FILTER_DEFAULT)
     {
         if (!$key) return $_GET;
         if (is_array($key)) return static::array_get_keys($key,$_GET);

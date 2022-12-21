@@ -17,7 +17,7 @@
 
                     <div class="control-group">
                         <label for="E">Type your password</label>
-                        <input type="text" class="form-control" required name="password"  />
+                        <input type="password" class="form-control" required name="password"  />
                     </div>
 
                     <div class="mt-3">

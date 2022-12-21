@@ -32,15 +32,16 @@
     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
         <div class="navbar-nav m-auto">
             <a href="/home" class="nav-item nav-link active">Home</a>
-            <a href="/about" class="nav-item nav-link">About</a>
             <a href="/blog" class="nav-item nav-link">Blog</a>
-            <a href="/contact" class="nav-item nav-link">Contact</a>
+            <a href="/about" class="nav-item nav-link">About US</a>
+            <a href="/contact" class="nav-item nav-link">Contact US</a>
             <?php if (!$user): ?>
-                <a href="/login" class="nav-item nav-link btn-primary">Login</a>
-                <a href="/signup" class="nav-item nav-link btn-success">Signup</a>
+                <a href="/login" class="nav-item nav-link bg-info ml-2">Login</a>
+                <a href="/signup" class="nav-item nav-link bg-success ml-2">Signup</a>
             <?php else: ?>
-                <a href="/dashbord" class="nav-item nav-link btn-warning">Dashbord</a>
-                <a href="/logout" class="nav-item nav-link btn-danger">Logout</a>            <?php endif ?>
+                <a href="/dashbord" class="nav-item nav-link bg-info ml-2">Dashbord</a>
+                <a href="/logout" class="nav-item nav-link   bg-primary ml-2">Logout</a>  
+            <?php endif ?>
         </div>
     </div>
 </nav>

@@ -10,7 +10,7 @@ class Articles extends Core\Model
     public function addArticle(string $title,string $content,string $img)
     {
         $date = date('Y-m-d');
-        $values = '"'. addslashes($title) .'","'.addslashes($content).'","'.addslashes($img).'","'.addslashes($date).'"';
+        $values = '"'. addslashes($title) .'","'.addslashes($content).'","'.addslashes($img).'","'.addslashes($date ).'"';
         return $this->insert_into(self::TABLE,'article_title,article_content,article_img,article_date',$values);
         
     }
@@ -28,7 +28,13 @@ class Articles extends Core\Model
 
     public function allArticles()
     {
-        return $this->select('*',self::TABLE);
+        return $this->select('*',self::TABLE,'order by article_id desc');
+    }
+
+    public function getArticlesByRules(int $limit = 0 ,string $order = 'DESC')
+    {
+        $sql = 'SELECT * FROM '.self::TABLE.' ORDER BY article_id '.$order.' LIMIT '.$limit;
+        return $this->query($sql)->fetchAll();
     }
 
     public function getArticleById(string $id)
